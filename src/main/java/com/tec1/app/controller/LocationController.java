@@ -3,6 +3,7 @@ package com.tec1.app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +16,19 @@ import com.tec1.app.response.LocationResponse;
 import com.tec1.app.service.LocationService;
 
 @RestController
-@RequestMapping("/tracking")
+@RequestMapping("/")
 public class LocationController {
 
 	@Autowired
 	private LocationService locationService;
+	
+	@GetMapping
+	public ResponseEntity<?> helloWorld(){
+		
+		return ResponseEntity.status(HttpStatus.OK).body("Hello world");
+	}
 
-	@PostMapping
+	@PostMapping("/tracking")
 	public ResponseEntity<?> getLocation(@RequestBody SatellitesRequest satellites) {
 
 		double d1 = 0;
