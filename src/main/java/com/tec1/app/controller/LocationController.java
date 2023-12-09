@@ -22,12 +22,22 @@ public class LocationController {
 	@Autowired
 	private LocationService locationService;
 	
+	/**
+	 * An end-point to test the api
+	 * @return
+	 */
 	@GetMapping
 	public ResponseEntity<?> helloWorld(){
 		
 		return ResponseEntity.status(HttpStatus.OK).body("Hello world");
 	}
 
+	/**
+	 * This end-point is to find the location of the vehicle 
+	 * @param satellites a list of satellites with the given distance
+	 * @return 200 code and position of the vehicle if the position is found
+	 * @return 404 code if the position could not be found
+	 */
 	@PostMapping("/tracking")
 	public ResponseEntity<?> getLocation(@RequestBody SatellitesRequest satellites) {
 
@@ -39,7 +49,7 @@ public class LocationController {
 		for (int i = 0; i < satellites.getSatellites().size(); i++) {
 
 			Satellite sat = satellites.getSatellites().get(i);
-
+			
 			switch (sat.getName()) {
 			case "Sputnik":
 

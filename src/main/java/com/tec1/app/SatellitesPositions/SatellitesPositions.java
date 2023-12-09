@@ -3,7 +3,7 @@ package com.tec1.app.SatellitesPositions;
 import com.tec1.app.model.SatelliteSpecs;
 
 /**
- * The satellites names with their positions
+ * Class for the satellites names with their positions
  */
 public class SatellitesPositions {
 

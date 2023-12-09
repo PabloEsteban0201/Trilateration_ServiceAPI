@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.tec1.app.model.Satellite;
 
+/**
+ * Class for the Satellites request
+ */
 public class SatellitesRequest {
 	
 	private List<Satellite> satellites;

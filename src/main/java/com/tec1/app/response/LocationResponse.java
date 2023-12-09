@@ -2,6 +2,9 @@ package com.tec1.app.response;
 
 import com.tec1.app.model.Position;
 
+/**
+ * Clas for the location response 
+ */
 public class LocationResponse {
 	
 	private Position position;
